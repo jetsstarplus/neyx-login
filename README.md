@@ -4,7 +4,7 @@
 ![login page Large](/public/login-large.png?raw=true)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-![alt text](/public/login-small.png?raw=true)
+![alt text](/public/login-p-small.png?raw=true)
 
 
 ## Available Scripts
