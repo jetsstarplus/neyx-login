@@ -1,38 +1,226 @@
-.App {
-  text-align: center;
+:root{
+  --color-primary: #042251;
+  --color-secondary: #cf0000;
+  --color-secondary-hover: #b30505;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a{
+  color: #fff;
+  font-size: .85rem;
+  text-decoration: none;
+  transition: all cubic-bezier(0.23, 1, 0.320, 1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form i{
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.primary-link:hover{
+  color:var(--color-secondary-hover);
+}
+
+.secondary-link{
+  text-decoration: underline;
+  padding: 0 5px;
+  color:var(--color-secondary-hover);
+  font-weight: bold;
+  font-style: italic;
+}
+
+input{
+  padding: 13px 13px;
+  border-radius: 5px;
+  border: 0;
+  box-shadow: 1px 5px 3px rgba(0, 0, 0, .2);
+  transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+input[type=submit] {
+  text-transform: uppercase;
+  background-color: var(--color-secondary);
+  outline: none;
+  color: white;
+  transition:all .2s cubic-bezier(0.68, -0.55, 0.265, 1.55) var(--color-primary);
+  margin: 1rem 0;
+}
+
+input[type=submit]:hover{
+  background-color: var(--color-secondary-hover);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+}
+
+
+.password-box{
+  width: 100%;
+  text-align: left;
+  display: block;
+  position: relative;
+}
+
+.password{
+  width: 90.5%;
+}
+.show-password{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  color: rgb(99, 96, 96);
+  padding: 11.5px 17px;
+  background-color: white;
+  border-radius: 5px;
+  transition: all .5 ease;
+}
+
+.show-password:hover{
+  color: black;
+}
+
+
+.container{
+  margin: 0;
+  height: 100vh;
+}
+
+.login-box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
+  background: linear-gradient(105deg, #fff 50%, var(--color-primary) 50%)
+}
+
+/* left box styling */
+
+.left-box{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;  
+}
+.logo-container{
+  width: 12rem;
+  height: 10rem;
+  overflow: hidden;
+}
+
+.logo{
+  width: 14rem;
+  height: 14rem;
+}
+
+.description-image-box{
+  margin-left: 4rem;
+}
+
+.description-image{
+  width: 30rem;
+  height: 30rem;
+}
+/* right box styling */
+
+.login-container{
+  flex: 1;
+  width:54%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.right-box{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center;
   color: white;
+  text-align:center;
+  width: 50%;
 }
 
-.App-link {
-  color: #61dafb;
+@media(max-width: 1024px){
+  .login-container{
+    width: 70%;
+  }
+  .description-image{
+    width: 25rem;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media(min-width: 2000px){
+  .logo-container{
+  width: 40rem;
+  height: 38rem;
+  overflow: hidden;
+}
+
+.logo{
+  width: 50rem;
+  height: 50rem;
+}
+
+
+  .description-image{
+    width: 100rem;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 900px){
+  .description-image{
+    width: 20rem;
   }
+}
+@media (max-width: 760px) {
+  .login-box{
+    background: var(--color-primary);
+  }
+  .left-box{
+    display: none;
+
+  }
+  .right-box{
+    width: 100%;
+  }
+
+  .login-container{
+    width: 80%;
+  }
+}
+
+.login-header{
+  margin: 8px 0;
+  font-size: 2.3rem;
+}
+
+.login-text{
+  margin: 3rem 0;
+}
+
+.primary-text{
+  font-size: .85rem;
+  color: #bbb;
+  margin: 2px 0;
+}
+
+.login-box-form{
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.other-links{
+  text-align: left;
+}
+
+.footer{
+  flex: 0;
+  font-size: .85rem;
 }
