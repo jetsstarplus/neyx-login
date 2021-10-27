@@ -15,6 +15,10 @@ form i{
   cursor: pointer;
 }
 
+.relative{
+  position: relative;
+}
+
 .primary-link:hover{
   color:var(--color-secondary-hover);
 }
@@ -35,22 +39,21 @@ input{
   transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-input[type=submit] {
+button{
   text-transform: uppercase;
   background-color: var(--color-secondary);
+  border-radius: 5px;
+  border: 0;
   outline: none;
   color: white;
   transition:all .2s cubic-bezier(0.68, -0.55, 0.265, 1.55) var(--color-primary);
   margin: 1rem 0;
+  padding: 13px;
 }
 
-input[type=submit]:hover{
+button:hover{
   background-color: var(--color-secondary-hover);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0;
+ 
 }
 
 

@@ -1,0 +1,179 @@
+:root{
+    --color-menu: rgb(255,204,224);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-size: .97rem;
+    overflow-x: hidden;
+}
+
+.container2{
+    margin: 0 13rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .container2{
+        margin: 0 7rem;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .container2{
+        margin: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container2{
+        margin: 0 .5rem;
+    }
+}
+
+.menu{
+    background-color: var(--color-menu);
+   
+}
+
+.menu-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: .3rem 0; 
+    align-items: center;
+}
+
+.menu-flex-item{
+    width: 33.33%;
+}
+
+.search-container{
+    display: inline;
+}
+.search-icon{
+    margin-right: -27px;
+}
+
+.search-input{
+  padding: 10px 0px 10px 35px;
+  border-radius: 0px;
+  border: 0;
+  box-shadow: none;
+  background-color: transparent;
+  transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  width: 65%;
+}
+
+.search-input:placeholder-shown{
+    font-size: 0.98rem;
+}
+
+.search-input:hover,
+.search-input:focus{
+    outline: 1px solid black;
+    border-radius: 0;
+}
+
+.offer{
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.profile{
+    display: flex;
+    justify-content:flex-end;
+}
+
+.profile-user{
+    color: black;
+    font-size: 1rem;
+    transition: all .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.login-text-link{
+    margin: 0 10px;
+}
+
+.login-text-link:hover{
+    color: rgb(53, 52, 52);
+}
+
+/* body styling */
+/* categories section */
+.title{
+    text-align: center;
+}
+.title h1{
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.title h2{
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding: 6rem 0;
+}
+
+.category-image{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 2rem;
+}
+
+.category-link{
+    width: 50%;
+    position: relative;
+}
+
+.category-text-link{
+    color: black;
+    font-size: 1.4rem;
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transition: all .3s ease-in-out;
+}
+
+.category-text-link:hover{
+    color: orange;
+}
+
+.category-men-link{
+    left: -5rem;
+    transform: rotate(-90deg);
+}
+
+.category-women-link{
+    right: -6.3rem;
+    transform: rotate(90deg);
+}
+
+/* Most wanted items list */
+
+.most-wanted{
+    background-color: orange;
+    margin: 3rem 0;
+    padding-bottom: 3rem;
+}
+
+.sale-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 2px;
+    row-gap: 2rem;
+}
+
+@media (max-width: 770px){
+    .sale-items{
+        justify-content: space-around;
+    }
+}
