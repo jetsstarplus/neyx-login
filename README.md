@@ -4,7 +4,7 @@
 ![login page Large](/public/login-large.png?raw=true)
 
 Ecommerce Login demo for neyx(https://neyx.in).
-![Ecommerce dashboard for neyx demo](/public/ecormmerce-dashboard.png?raw=true)
+![Ecommerce dashboard for neyx demo](/public/images/ecormmerce-dashboard.png?raw=true)
 
 
 ## Available Scripts

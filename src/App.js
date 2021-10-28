@@ -7,6 +7,7 @@ import {
 
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import Detail from './pages/Detail';
 
 
 function App() {  
@@ -15,6 +16,10 @@ function App() {
       <Switch>
         <Route path="/login" exact>
           <Login />
+        </Route>
+          
+        <Route path="/detail" exact>
+          <Detail />
         </Route>
 
         <Route path="/" exact>

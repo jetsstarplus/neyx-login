@@ -58,14 +58,13 @@ button:hover{
 
 
 .password-box{
-  width: 100%;
   text-align: left;
-  display: block;
+  display: flex;
   position: relative;
 }
 
 .password{
-  width: 90.5%;
+  width: 100%;
 }
 .show-password{
   position: absolute;
@@ -223,7 +222,7 @@ button:hover{
   text-align: left;
 }
 
-.footer{
+.simple-footer{
   flex: 0;
   font-size: .85rem;
 }

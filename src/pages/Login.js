@@ -5,11 +5,23 @@ import '../App.css';
 
 
 const Login = () => {
-    const [password, showPassword] = useState('password')
+    const [password, showPassword] = useState(
+      {
+        type: 'password',
+        icon: 'fa-eye',
+        isOpen: true
+      })
 
   const handleClick = () =>{
-    let type = password=== 'text'?'password': 'text'
-    showPassword(type)
+    let icon = 'fa-eye-slash';
+    let type = 'text'
+    let openState = password.isOpen=== false?true: false
+    // console.log(password)
+    if (openState === true){
+      icon = 'fa-eye'
+      type='password'
+    }
+    showPassword({type:type, icon:icon, isOpen:openState})
   }
     return (
         <>
@@ -20,7 +32,7 @@ const Login = () => {
                 <img src='/logo.svg' alt='logo' className="logo"/>
               </div>
               <div className="description-image-box">
-                <img src='/undraw_Data_trend_red.svg' alt='' className="description-image"/>
+                <img src='/images/undraw_Data_trend_red.svg' alt='' className="description-image"/>
               </div>
             </div>
             <div className="right-box">
@@ -33,9 +45,9 @@ const Login = () => {
                   <form className="login-box-form">
                     <input type="text" placeholder="customer id" />
                     <div className="password-box">
-                      <input type={password} placeholder="password" className="password"/>
+                      <input type={password.type} placeholder="password" className="password"/>
                       <div className= 'show-password' onClick={handleClick}>
-                        <i class="far fa-eye"></i>
+                        <i class={`far ${password.icon}`}></i>
                       </div>
                     </div>
                     <button type="submit">sign in</button>
@@ -47,7 +59,7 @@ const Login = () => {
                   </div>
                 </div>
               </div>
-              <div className="footer">
+              <div className="simple-footer">
                 <p>&copy; {new Date().getFullYear()} NeyX. All Rights Reserved</p>
               </div>
             </div>

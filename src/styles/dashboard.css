@@ -20,6 +20,10 @@ body{
     margin: 0 6rem;
 }
 
+.color-black{
+    color: black;
+}
+
 @media screen and (max-width: 1000px) {
     .container2{
         margin: 0 7rem;
@@ -90,7 +94,7 @@ body{
         left: 3px;
     }
     .cart-icon{
-        right: 3px;
+        right: 15px;
     }
 }
 
@@ -116,6 +120,7 @@ body{
 
 .menu-flex-item{
     width: 33.33%;
+    min-width: 8.5rem;
 }
 
 .search-container{

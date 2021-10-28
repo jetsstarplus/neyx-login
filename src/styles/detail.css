@@ -1,0 +1,61 @@
+/* Styling for the details page
+ */
+
+ .breadcrumb{
+     display: flex;
+     flex-flow: row nowrap;
+     margin: 4rem 0;
+     justify-content: space-between;
+     column-gap: 2rem;
+ }
+
+ .breadcrumb .content{
+     min-width: 7rem;
+ }
+
+ .breadcrumb .content .home-page{
+     font-weight: 600;
+     padding: 0 .2rem 0 0;
+     color: black;
+     font-size: .97rem;
+     transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ }
+ .breadcrumb .content .home-page:hover{
+     color: gray;
+     text-decoration: underline;
+ }
+
+ .breadcrumb .content .item{
+     color: gray;
+     padding: 0 0 0 .2rem;
+ }
+
+ .pagination {
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: .96rem;
+    text-align: right;
+    min-width: 8.5rem;
+    justify-content: flex-end;
+}
+
+.pagination .separator {
+    color: gray;
+    font-weight: bold;
+}
+
+.pagination .links{
+    padding: 1px 5px;;
+    margin: 0;
+    font-size: .97rem;
+    transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.pagination .links i{
+    font-size: .8rem;
+    padding: 0px 6px;
+}
+
+.pagination .links:hover{
+    color: gray;
+    text-decoration: underline;
+}

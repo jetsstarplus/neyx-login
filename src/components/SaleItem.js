@@ -18,7 +18,7 @@ const SaleItem = ({image, altText, product, original, offer}) => {
                     <Link className = "sales-item-button" to='/'>Add to cart</Link>
                 </div>
                 <div>
-                    <Link className="sales-item-button sales-item-buy-now-button" to='/'>Buy now</Link>
+                    <Link className="sales-item-button sales-item-buy-now-button" to='/detail'>Buy now</Link>
                 </div>
             </div>                       
         </div>
