@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 
 import '../App.css';
 
@@ -41,8 +42,8 @@ const Login = () => {
                     
                   </form>
                   <div className="other-links">
-                    <a href="#" className="primary-link">forgot your password?</a>
-                    <a href="#" className="secondary-link">contact</a>
+                    <Link to="/" className="primary-link">forgot your password?</Link>
+                    <Link to="/" className="secondary-link">contact</Link>
                   </div>
                 </div>
               </div>

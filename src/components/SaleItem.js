@@ -5,20 +5,23 @@ import '../styles/saleItems.css';
 
 const SaleItem = ({image, altText, product, original, offer}) => {
     return (
-        <Link className='sales-item' to='/'>
+        <div className='sales-item'>
             <div className="sales-item-image">
                 <img src={image} alt={altText}/>
             </div> 
-            <div className="sales-item-show">
-                <div className="sales-item-show-container">
-                    <Link to="\" className= "sales-item-button">Quick view</Link>
-                </div>
-            </div>
             <div className="sales-item-description">
-                <p>{product}</p>
-                <p><span className="original">{original}</span> {offer}</p>
+                <div>
+                    <p>{product}</p>
+                    <p><span className="original">{original}</span> <strong>{offer}</strong></p>
+                </div>
+                <div>
+                    <Link className = "sales-item-button" to='/'>Add to cart</Link>
+                </div>
+                <div>
+                    <Link className="sales-item-button sales-item-buy-now-button" to='/'>Buy now</Link>
+                </div>
             </div>                       
-        </Link>
+        </div>
     )
 }
 

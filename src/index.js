@@ -4,6 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import './icons/fontawesome/css/all.css';
+import './icons/fontawesome/css/regular.css';
+import './icons/fontawesome/css/solid.css';
+
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
