@@ -71,7 +71,7 @@ const Dashboard = () => {
                             <h2>Most Wanted Items</h2>
                         </div>
                         <div className="sale-items">
-                            <SaleItem image='/shirt1.webp' altText="alt text" offer={"$20.30"}  product={"product"}/>
+                            <SaleItem image='/tshirt1.webp' altText="alt text" offer={"$20.30"}  product={"product"}/>
                             <SaleItem image='/shirt1.webp' altText="alt text" offer={"$20.30"}  product={"product"}/>
                             <SaleItem image='/jumper.webp' altText="alt text" offer={"$20.30"}  product={"product"}/>
                             <SaleItem image='/socks.webp' altText="alt text" offer={"$20.30"}  product={"product"}/>
