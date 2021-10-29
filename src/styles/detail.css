@@ -87,6 +87,32 @@
 }
 
 .image-container img{
+    max-height: 590px;
+    object-fit: cover;
+}
+
+.image-selector{
+    padding: 1.5rem 0 .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.image-selector img{
+    width: 50;
+    height: 50;
+    cursor: pointer;
+    object-fit: cover;
+    transition:.4s all ease;
+}
+
+.image-selector img:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.image-container img{
     min-width: 70%;
     max-width: 80%;
 }
@@ -163,10 +189,35 @@
     padding: .6rem 0;
 }
 
-.color-box{
+.color-selector .boxes .particular-box{
+    padding: 0 .5rem;
+    position: relative;
+}
+
+.color-selector .boxes .particular-box input[type=radio]{
+    /* display: none;
+    opacity: 0; */
+}
+
+.color-selector .boxes .particular-box input{
+    position:absolute;
+    cursor: pointer;
+    top:0;
+    left:0;
+    z-index: 1;
+    opacity: 0;
+    height: 2.5rem;
+    width: 2.5rem;
+    transform: translate(-2px, -10px);
+}
+
+.color-selector .boxes .particular-box .color-box-container .color-box{
+    position: absolute;
     width: 1.5rem;
     height: 1.5rem;
-    transition: all .1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all .1s cubic-bezier(0.165, 0.84, 0.44, 1); 
+    top: 0;
+    left: 0;
     border-radius: 50%;
     position: relative;
 }
@@ -179,7 +230,20 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: none;
 }
+
+.color-selector .boxes .particular-box:hover input ~ .color-box{
+    box-shadow: .2rem .2rem 1rem 0 rgba(0, 0, 0, .5);
+    cursor: pointer;
+}
+
+
+
+.particular-box input[type=radio]:checked ~ .color-box-container .color-box .color-box-inside{
+    display: block;
+}
+
 
 .color-box:hover{
     box-shadow: .1em .1rem .2rem 0 rgba(0, 0, 0, .5)
@@ -193,6 +257,18 @@
 
 .sale-quantity input{
     width: 3rem;
+    text-align: center;
+}
+
+.plus-minus-button{
+    color: gray;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.plus-minus-button:hover{
+    color: black;
 }
 
 

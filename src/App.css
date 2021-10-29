@@ -68,6 +68,9 @@ label{
   padding: .5rem 0;
 }
 
+.inactive{
+  cursor:not-allowed;
+}
 
 .bordered-input{
   box-shadow: none;

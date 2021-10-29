@@ -13,6 +13,9 @@ const Detail = ({match}) => {
     } = match;
 
     const [product, setProduct] = useState('');
+    const [previousProduct, setPreviousProduct] = useState('');
+    const [nextProduct, setNextProduct] = useState('');
+    const [productImage, setProductImage] = useState('');
     // const [error, setError] = useState(false);
     // const [loading, setLoading] = useState(false);
     const [saleQuantity, setSaleQuantity] = useState(1);
@@ -21,13 +24,36 @@ const Detail = ({match}) => {
         setSaleQuantity(e.target.value)
     }
 
+    const increaseQuantity = () =>{
+        // this method increases the quantity
+        let quantity = saleQuantity
+        setSaleQuantity(quantity+1)
+    }
+    
+    const decreaseQuantity = () =>{
+        // this method decreases the quantity
+        let quantity = saleQuantity === 0? 0: saleQuantity-1;
+        setSaleQuantity(quantity)
+    }
+
+    const setImage = (e) =>{
+        setProductImage(e.target.src)
+    }
+
     useEffect(() =>{
         const fetchProduct = async =>{
             // setLoading(true);
             // setError(false);
             try{
                 const result = data.find(item => item.slug === productSlug)
+                const position = data.indexOf(result)
+                const previous = data[position-1] || false
+                const next = data[position+1] || false
+                // console.log(next)
                 setProduct(result)
+                setPreviousProduct(previous)
+                setNextProduct(next)
+                setProductImage(result.images && result.images[0])
             }
             catch(error){
                 // setError(true)
@@ -37,7 +63,7 @@ const Detail = ({match}) => {
         fetchProduct()
 
     }, [productSlug])
-    // console.log(product)
+    console.log(productImage)
 
     return (
         <Layout>
@@ -47,16 +73,23 @@ const Detail = ({match}) => {
                             <Link className="home-page" to ='/'>Home</Link>/<span className="item">{product.name}</span>
                         </div>
                         <div class="pagination">
-                            <Link className="links color-black" to='/'><i className="fa fa-angle-left"></i>Prev</Link> <span className="separator">|</span><Link className="links color-black" to='/'>Next<i className="fas fa-angle-right"></i></Link>
+                            <Link className={`links color-black ${!previousProduct?'inactive':''}`} to={`/product/${!previousProduct?product.slug:previousProduct.slug}`}><i className="fa fa-angle-left"></i>Prev</Link> <span className="separator">|</span><Link className={`links color-black ${!nextProduct?'inactive':''}`} to={`/product/${!nextProduct?product.slug:nextProduct.slug}`}>Next<i className="fas fa-angle-right"></i></Link>
                         </div>
                 </header>
                 <section className="product-details">
                     <div className="product-images">
                         <div className = "image-container">
-                            <img src={product.images && product.images[0]} alt = {product.slug}/>
+                            <img src={productImage} alt = {product.slug}/>
                         </div>
                         <div className='image-selector'>
-                            Hi
+                            {
+                                product.images && product.images.map((image, index) => {
+                                    return(
+                                        // <span>hello</span>
+                                            <img  key = {index} src ={image} alt={image} width='50' height='50' onClick={setImage}/>
+                                        )
+                                })
+                            }
                         </div>
                         <div className="product-description">
                             <p>{product.description}</p>
@@ -91,15 +124,17 @@ const Detail = ({match}) => {
                                     {
                                         product.colors && product.colors.map(color =>{
                                             return(
-                                                <>
+                                                <div className="particular-box">
                                                     <input type="radio" name='color' style={{ color: color}} className="color-box" value={color}>                                                     
                                                     </input>
-                                                    <div className="color-box" style={{border: `2px solid ${color}`}} >
-                                                        <div className="color-box-inside" style={{backgroundColor: color}}>
+                                                    <div className="color-box-container">
+                                                        <div className="color-box" style={{border: `2px solid ${color}`}} >
+                                                            <div className="color-box-inside" style={{backgroundColor: color}}>
 
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </>
+                                                </div>
                                             )
                                         })
                                     }
@@ -107,7 +142,9 @@ const Detail = ({match}) => {
                             </div>
                             <div className="sale-quantity">
                                 <label>Quantity</label>
-                                <input value={saleQuantity} onChange={changeQuantity} className=" bordered-input"/>
+                                <div className="w-full">
+                                    <span class="plus-minus-button" onClick={decreaseQuantity}><i className="fa fa-minus"></i></span><input value={saleQuantity} onChange={changeQuantity} className=" bordered-input"/> <span className="plus-minus-button" onClick={increaseQuantity}><i className="fa fa-plus"></i></span>
+                                </div>
                             </div>
                             <div className="action-buttons">
                                 <div className="w-full flex" style={{gap:10}}><button style={{flexGrow:1}} className="sales-item-button-detail">Add to Cart</button><button className="sales-item-button-detail sales-item-button-detail-bordered"><i className="fa fa-heart"></i></button></div>
