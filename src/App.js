@@ -18,9 +18,7 @@ function App() {
           <Login />
         </Route>
           
-        <Route path="/detail" exact>
-          <Detail />
-        </Route>
+        <Route path="/product/:productSlug" exact component={Detail} />          
 
         <Route path="/" exact>
           <Dashboard />

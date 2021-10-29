@@ -4,6 +4,10 @@
   --color-secondary-hover: #b30505;
 }
 
+body{
+  min-width: 250px;
+}
+
 a{
   color: #fff;
   font-size: .85rem;
@@ -31,7 +35,7 @@ form i{
   font-style: italic;
 }
 
-input{
+input, select{
   padding: 13px 13px;
   border-radius: 5px;
   border: 0;
@@ -49,6 +53,7 @@ button{
   transition:all .2s cubic-bezier(0.68, -0.55, 0.265, 1.55) var(--color-primary);
   margin: 1rem 0;
   padding: 13px;
+  cursor: pointer;
 }
 
 button:hover{
@@ -56,6 +61,29 @@ button:hover{
  
 }
 
+
+label{
+  width: 100%;
+  color: grey;
+  padding: .5rem 0;
+}
+
+
+.bordered-input{
+  box-shadow: none;
+  border: 1px solid gray;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.w-full{
+  width: 100%;
+}
 
 .password-box{
   text-align: left;
@@ -81,6 +109,7 @@ button:hover{
 .show-password:hover{
   color: black;
 }
+
 
 
 .container{

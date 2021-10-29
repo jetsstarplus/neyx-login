@@ -2,10 +2,13 @@ import React from 'react'
 import SaleItem from '../components/SaleItem';
 import { Link } from 'react-router-dom';
 
-import Layout from "../layout"
+import Layout from "../layout";
+
+import products from '../data/products.json';
 
 
 const Dashboard = () => {
+    console.log(products)
     return (
         <Layout>        
         <header className="category">
@@ -39,13 +42,12 @@ const Dashboard = () => {
                     <h2>Most Wanted Items</h2>
                 </div>
                 <div className="sale-items">
-                    <SaleItem image='/images/tshirt1.webp' altText="alt text" offer={"$20.30"}  product={"product"}/>
-                    <SaleItem image='/images/shirt1.webp' altText="alt text" offer={"$20.30"}  product={"product"}/>
-                    <SaleItem image='/images/jumper.webp' altText="alt text" offer={"$20.30"}  product={"product"}/>
-                    <SaleItem image='/images/socks.webp' altText="alt text" offer={"$20.30"}  product={"product"}/>
-                    <SaleItem image='/images/phone.webp' altText="alt text" offer={"$20.30"}  product={"product"}/>
-                    <SaleItem image='/images/dress.webp' altText="alt text" offer={"$20.30"}  product={"product"}/>
-
+                    {products.map(product =>{
+                        console.log(product)
+                        return(
+                            <SaleItem key={product.id} id={product.id} slug={product.slug} image={product.images[0]} price = {product.price} name={product.name}/>
+                        )
+                    })}
                 </div>
                 <div class="shop-more-items">
                     <Link class="link">Shop All Items</Link>

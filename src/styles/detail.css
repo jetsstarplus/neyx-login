@@ -51,7 +51,7 @@
     transition: all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .pagination .links i{
-    font-size: .8rem;
+    font-size: .9rem;
     padding: 0px 6px;
 }
 
@@ -59,3 +59,170 @@
     color: gray;
     text-decoration: underline;
 }
+
+.product-details{
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+/* product images */
+.product-images{
+    width: 60%;
+
+}
+
+.product-description p{
+    text-align: justify;
+    font-size: .9rem;
+    color: rgb(24, 23, 23);
+    line-height: 1.3rem;
+}
+
+.image-container{
+    width: 100%;
+}
+
+.image-container img{
+    min-width: 70%;
+    max-width: 80%;
+}
+
+.product-more-details{
+    width: 35%;
+    padding: 0;
+}
+
+.product-more-details .content{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: .9rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .product-more-details{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .product-images{
+        min-width: 100%;
+    }
+    
+    .product-more-details{
+        width: 100%;
+    }
+
+    .image-container img{
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+.product-more-details .content .price{
+    font-size: 1.1rem;
+    padding: .5rem 0;
+    font-weight: 500;
+}
+
+/* The right side content and flow area */
+
+.product-title h1{
+    margin: 0;
+    text-transform: capitalize;
+
+}
+
+.sku{
+    text-transform: uppercase;
+    color:rgb(24, 23, 23);
+}
+
+.size-selector{
+    display: flex;
+    flex-direction: column;
+    padding: .2rem 0;
+    width: 100%;
+}
+
+/* color selector */
+
+.color-selector{
+    padding: 1rem 0;
+}
+
+.color-selector .boxes{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: .3rem;
+    padding: .6rem 0;
+}
+
+.color-box{
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all .1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 50%;
+    position: relative;
+}
+
+.color-box-inside{
+    position: absolute;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.color-box:hover{
+    box-shadow: .1em .1rem .2rem 0 rgba(0, 0, 0, .5)
+}
+
+/* Sale Quantity */
+.sale-quantity{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.sale-quantity input{
+    width: 3rem;
+}
+
+
+/* action buttons */
+
+.action-buttons{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+.sales-item-button-detail{
+    background-color: black;
+    border: 2px solid black;
+    margin: 0;
+    transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sales-item-button-detail:hover{
+    background-color: transparent;
+    color: black;
+}
+
+.sales-item-button-detail-bordered{
+    background: transparent;
+    color: black;
+}
+
+.sales-item-button-detail-bordered:hover{
+    background: black;
+    color: white;
+}
+
